@@ -1,25 +1,21 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Score Analyzer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" rel="stylesheet" />
+    <script src="script.js" defer></script>
+  </head>
 
-<head>
-	<title>Score Analyzer</title>
-	<meta name="viewport" content="width=device-width, initial-scale=0.5">
-	<link href="style.css" rel="stylesheet">
-	<script src="script.js" defer>
+  <body>
+    <h1>Score Analyzer</h1>
 
-	</script>
-</head>
-
-<body>
-	<h1>Score Analyzer</h1>
-
-	<input type="number" placeholder="score" id="score">
-  <button id="submitButton">Submit</button>
-  <button id="averageButton">Average score</button>
-  <button id="highestButton">Highest score</button>
-  <button id="lowestButton">Lowest score</button>
-  <p id="scoresParagraph">Scores:</p>
-  <p id="resultParagraph"></p>
-</body>
-
+    <input type="number" placeholder="score" autocomplete="off" id="score" />
+    <button id="submitButton">Submit</button>
+    <button id="averageButton">Average score</button>
+    <button id="highestButton">Highest score</button>
+    <button id="lowestButton">Lowest score</button>
+    <p id="scoresParagraph">Scores:</p>
+    <p id="resultParagraph"></p>
+  </body>
 </html>

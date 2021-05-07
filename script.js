@@ -13,22 +13,26 @@ averageButton.addEventListener(`click`, showAverageScore)
 highestButton.addEventListener(`click`, showHighestScore)
 lowestButton.addEventListener(`click`, showLowestScore)
 
+score.addEventListener(`keydown`, keyPressed)
+score.focus()
+
 function submit() {
   let scoreValue = score.value.trim()
 
-  if (scoreValue != `` && !isNaN(scoreValue)) {
+  if (scoreValue != ``) {
     scoresParagraph.innerHTML = `${scoresParagraph.innerHTML} ${scoreValue}`
     score.value = ``
 
     scores.push(Number(scoreValue))
   }
+
+  score.focus()
 }
 
 function showAverageScore() {
   if (scores.length == 0) {
     resultParagraph.innerHTML = `No score was submitted.`
-  }
-  else {
+  } else {
     let runningTotal = 0
 
     for (let score of scores) {
@@ -43,8 +47,7 @@ function showAverageScore() {
 function showHighestScore() {
   if (scores.length == 0) {
     resultParagraph.innerHTML = `No score was submitted.`
-  }
-  else {
+  } else {
     let highest = scores[0]
 
     for (let score of scores) {
@@ -60,8 +63,7 @@ function showHighestScore() {
 function showLowestScore() {
   if (scores.length == 0) {
     resultParagraph.innerHTML = `No score was submitted.`
-  }
-  else {
+  } else {
     let lowest = scores[0]
 
     for (let score of scores) {
@@ -71,5 +73,11 @@ function showLowestScore() {
     }
 
     resultParagraph.innerHTML = `Lowest score: ${lowest}`
+  }
+}
+
+function keyPressed(event) {
+  if (event.keyCode == 13) {
+    submit()
   }
 }
